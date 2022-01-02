@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BD ROOM</string>
+    <!--NavDrawer-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--Menu-->
+    <string name="action_settings">Settings</string>
+    <string name="more">Más…</string>
+    <string name="products">Productos</string>
+    <string name="share">Compartir</string>
+    <string name="exit">Salir</string>
+    <string name="help">Ayuda</string>
+    <!-- Header -->
+    <string name="header_sub">(SharePreferences, Files, Room DB)</string>
+    <string name="header_title">Android Persistence</string>
+    <!--Form-->
+    <string name="name">Nombre</string>
+    <string name="cant">Cantidad</string>
+    <string name="search">Buscar</string>
+    <string name="hello_blank_fragment">Hello World</string>
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <item name="ic_menu_products" type="drawable">@drawable/ic_pruducts</item>
+    <item name="ic_menu_help" type="drawable">@drawable/ic_help</item>
+    <item name="ic_menu_share" type="drawable">@drawable/ic_share</item>
+    <item name="ic_menu_exit" type="drawable">@drawable/ic_exit</item>
+</resources>
