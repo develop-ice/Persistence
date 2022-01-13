@@ -12,12 +12,12 @@ import java.util.List;
 
 public class ProductoRepository {
     private ProductoDao productoDao;
-    private LiveData<List<Producto>> allProductoes;
+    private LiveData<List<Producto>> allProductos;
 
     public ProductoRepository(Application application) {
         AppDB appDB = AppDB.getInstance(application);
         productoDao = appDB.productoDao();
-        allProductoes = productoDao.getAll();
+        allProductos = productoDao.getAll();
     }
 
     public void insert(Producto producto) {
@@ -33,7 +33,7 @@ public class ProductoRepository {
     }
 
     public LiveData<List<Producto>> getAll() {
-        return allProductoes;
+        return allProductos;
     }
 
     private static class insertProductoAsyncTask extends AsyncTask<Producto, Void, Void> {

@@ -1,5 +1,7 @@
 package com.android.bdroom.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.android.bdroom.R;
 import com.android.bdroom.ui.screen_help.HelpFragment;
 import com.android.bdroom.ui.screen_products.ProductsFragment;
+import com.android.bdroom.ui.screen_shared_preferences.SharedPreferencesFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +43,14 @@ public class MainActivity extends AppCompatActivity
 
         changeFragment(new ProductsFragment(), getResources().getString(R.string.products));
         navigationView.setCheckedItem(R.id.nav_products);
+
+        // Saludo desde las SharedPreferences
+        SharedPreferences prefs =
+                getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String saved_name = prefs.getString(getString(R.string.saved_name), "");
+        if (!saved_name.isEmpty()) {
+            Toast.makeText(this, "Hola " + saved_name, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -67,6 +78,9 @@ public class MainActivity extends AppCompatActivity
         boolean isFragmentSelected = false;
 
         switch (id) {
+            case R.id.nav_shared_preferences:
+                changeFragment(new SharedPreferencesFragment(), getResources().getString(R.string.shared_preferences));
+                break;
             case R.id.nav_products:
                 changeFragment(new ProductsFragment(), getResources().getString(R.string.products));
                 break;

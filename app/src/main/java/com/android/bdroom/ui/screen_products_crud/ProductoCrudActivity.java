@@ -29,6 +29,10 @@ public class ProductoCrudActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_producto_crud);
 
+        // Back
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+
         init();
 
         if (getIntent().hasExtra(EXTRA_ID)) {
