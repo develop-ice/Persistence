@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.bdroom.R;
@@ -24,6 +25,7 @@ public class SharedPreferencesFragment extends Fragment {
     // UI
     private View rootView;
     private EditText etName;
+    private TextView tvShared;
     private Button btnSave;
 
     // Referencia SharedPreferences como variable global
@@ -57,6 +59,12 @@ public class SharedPreferencesFragment extends Fragment {
                 editor.apply();
                 // Msg de confirmacion
                 Toast.makeText(getContext(), R.string.msg_save, Toast.LENGTH_SHORT).show();
+                etName.setText("");
+                if (name.isEmpty()) {
+                    tvShared.setText(R.string.empty_data);
+                } else {
+                    tvShared.setText("Hola " + name);
+                }
             }
         });
 
@@ -70,13 +78,13 @@ public class SharedPreferencesFragment extends Fragment {
         String saved_name = prefs.getString(getString(R.string.saved_name), "");
 
         if (!saved_name.isEmpty()) {
-            etName.setText("Hola " + saved_name);
+            tvShared.setText("Hola " + saved_name);
         }
     }
 
     private void initView() {
         etName = rootView.findViewById(R.id.et_name);
+        tvShared = rootView.findViewById(R.id.tv_shared);
         btnSave = rootView.findViewById(R.id.btn_save);
     }
-
 }

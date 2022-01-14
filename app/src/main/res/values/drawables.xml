@@ -1,5 +1,6 @@
 <resources>
     <item name="ic_menu_shared_preferences" type="drawable">@drawable/ic_folder_shared</item>
+    <item name="ic_menu_todo" type="drawable">@drawable/ic_pruducts</item>
     <item name="ic_menu_products" type="drawable">@drawable/ic_pruducts</item>
     <item name="ic_menu_help" type="drawable">@drawable/ic_help</item>
     <item name="ic_menu_share" type="drawable">@drawable/ic_share</item>
